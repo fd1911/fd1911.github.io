@@ -10,8 +10,55 @@ function sum() {
 
 var days = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"]
 function dayarray() {
-    for(var i = 0; i <7; i++){
+    for(var i = 0; i < days.length; i++){
         console.log(days[i]);
     }
 
+}
+
+function numpick(){
+    var n = parseInt(prompt("Pick a number beetwheen 0 to 9."))
+    switch (n){
+        case 0:
+            console.log("Picked " + n);
+            break;
+        
+        case 1:
+            console.log("Picked " + n);
+            break;
+        
+        case 2:
+            console.log("Picked " + n);
+            break;
+        
+        case 3:
+            console.log("Picked " + n);
+            break;
+        
+        case 4:
+            console.log("Picked " + n);
+            break;
+        
+        case 5:
+            console.log("Picked " + n);
+            break;
+        
+        case 6:
+            console.log("Picked " + n);
+            break;
+        
+        case 7:
+            console.log("Picked " + n);
+            break;
+        
+        case 8:
+            console.log("Picked " + n);
+            break;
+        
+        case 9:
+            console.log("Picked " + n);
+            break;
+        default:
+            console.warn("You didn't specified a number or your imput is out of range");
+    }
 }
