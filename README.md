@@ -4,4 +4,4 @@
 
 ##
 
-* Federico Godoy :godmode:
+* Federico Godoy
