@@ -59,6 +59,7 @@ function numpick(){
             console.log("Picked " + n);
             break;
         default:
+            alert ("Seleccionaste cualquier cosa che....")
             console.warn("You didn't specified a number or your imput is out of range");
     }
 }
