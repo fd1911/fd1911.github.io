@@ -9,6 +9,29 @@
     <h1>Coderhouse, Clase 4</h1>
     <h4>Hola!</h4>
     <h4>Federico Godoy.</h4>
+    <div>
+        <h2>Carga de datos:</h2>
+        <form>
+            <label for="fname">First Name:</label><br>
+            <input type="text" id="firstname" name="fname">
+            <button onclick=hello()>Saludar</button>
+            <br>
+        </form>
+    </div>
+    <div>
+    <button onclick=calc()>Lanzar Suma Prompt</button>
+    </div>
+    <div>
+        <h3>Calcular promedio dos numeros.</h3>
+        <form>
+            <label for="num1">Primer Numero</label><br>
+            <input type="text" id="n1"><br>
+            <label for="num2">Segundo Numero</label><br>
+            <input type="text" id="n2"><br>
+            <button onclick=promedio()>Calcular promedio</button>
+        </form>
+        <p id="promedio"></p>
+    </div>
 </body>
-<script defer src="script.js"></script>
+<script src="script.js"></script>
 </html>
