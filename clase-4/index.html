@@ -25,11 +25,11 @@
         <h3>Calcular promedio dos numeros.</h3>
         <form>
             <label for="num1">Primer Numero</label><br>
-            <input type="text" id="n1"><br>
+            <input type="text" id="n1" onsubmit="return false"><br>
             <label for="num2">Segundo Numero</label><br>
-            <input type="text" id="n2"><br>
-            <button onclick=promedio()>Calcular promedio</button>
+            <input type="text" id="n2" onsubmit="return false"><br>
         </form>
+        <button onclick=promedio()>Calcular promedio </button>
         <p id="promedio"></p>
     </div>
 </body>

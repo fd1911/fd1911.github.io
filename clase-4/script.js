@@ -23,4 +23,5 @@ function promedio() {
     var promedio = (parseFloat(number1) + parseFloat(number2)) / 2;
     document.getElementById('promedio').innerHTML = promedio;
     console.log(promedio)
+    return false
 }
