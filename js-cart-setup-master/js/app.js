@@ -35,13 +35,13 @@
                     'my-3');
 
                 cartItem.innerHTML =
-                `<img src=${item.img} class="img-fluid rounded-circle" id="item-img" alt="">
-                <div class="item-text">  
+                    `<img src=${item.img} class="img-fluid rounded-circle" id="item-img" alt="">
+                <div class="item-text">
                 <p id="cart-item-title" class="font-weight-bold mb-0">${item.name}</p>
                 <span>$</span>
                 <span id="cart-item-price" class="cart-item-price" class="mb-0">${item.price}</span>
                 </div>
-                <a href="#" id='cart-item-remove' class="cart-item-remove">
+                <a href="#" id='cart-item-remove' onclick="itemRemove();return false;"class="cart-item-remove">
                 <i class="fas fa-trash"></i>
                 </a>
                 </div>`
@@ -50,40 +50,76 @@
                 const cart = document.getElementById("cart");
                 const total = document.querySelector(".cart-total-container");
 
-                cart.insertBefore(cartItem,total);
+                cart.insertBefore(cartItem, total);
                 alert(`${item.name} añadido al carrito con un valor de ${item.price}`)
 
                 showTotal();
-
-                console.log(pos);
-                console.log(fullpath);
-                console.log(partpath);
-                console.log(name);
-                console.log(price);
-                console.log(finalprice);
-                console.log(item);
+                //removido para no llenar tanto la consola
+                // console.log(pos);
+                // console.log(fullpath);
+                // console.log(partpath);
+                // console.log(name);
+                // console.log(price);
+                // console.log(finalprice);
+                // console.log(item);
             }
         });
     });
-function showTotal(){
-    const total = [];
-    const items = document.querySelectorAll(".cart-item-price");
 
-    items.forEach(function(item){
-        total.push(parseFloat(item.textContent));
-    })
-    
-    console.log(total);
-    const totalPrice = total.reduce(function(total,item){
-        total+=item;
-        return total;
-    },0);
-    const precioFinal = totalPrice.toFixed(2);
-    console.log(`El precio final es $${precioFinal}`);
+    function showTotal() {
+        const total = [];
+        const items = document.querySelectorAll(".cart-item-price");
 
-    document.getElementById('cart-total').textContent = precioFinal;
-    document.querySelector('.item-total').textContent = precioFinal;
-    document.getElementById('item-count').textContent = total.length;
+        items.forEach(function (item) {
+            total.push(parseFloat(item.textContent));
+        })
+
+        console.log(total);
+        const totalPrice = total.reduce(function (total, item) {
+            total += item;
+            return total;
+        }, 0);
+        const precioFinal = totalPrice.toFixed(2);
+        console.log(`El precio final es $${precioFinal}`);
+
+        document.getElementById('cart-total').textContent = precioFinal;
+        document.querySelector('.item-total').textContent = precioFinal;
+        document.getElementById('item-count').textContent = total.length;
     }
 
 })();
+
+//Remover item del carrito
+function itemRemove() {
+    //obtiene el elemento del boton para remover un objeto y como es un child element
+    const deleteBTN = document.getElementById("cart-item-remove")
+    //obtenemos el objeto parent
+    const deleteBTNparent = deleteBTN.parentElement;
+
+    //mostrar en consola
+    console.log(deleteBTNparent)
+    //remueve el elemento
+    deleteBTNparent.remove()
+    const itemQTY = document.getElementById("item-count")
+    console.log(itemQTY.innerText);
+    itemQTY - itemQTY.innerHTML
+    
+};
+//TODO falta el actualizar el item count y los precios totales por que no me funciona bien
+
+
+
+
+
+
+
+// deleteBTN.addEventListener('click', function(){
+//     let deleteBTNparent = deleteBTN.parentElement.parentElement;
+// })
+
+
+//  console.log(deleteBTN);
+//  deleteBTN.addEventListener('click', function(){
+//      clg(deleteBTN.parentElement)
+//  })
+// document.querySelector("#cart-item-remove > i")
