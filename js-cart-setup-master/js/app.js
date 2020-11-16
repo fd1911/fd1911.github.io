@@ -103,20 +103,13 @@ function itemRemove() {
     const itemQTY = document.getElementById("item-count")
     console.log(itemQTY.innerText);
     itemQTY - itemQTY.innerHTML
-    
+
 };
 //TODO falta el actualizar el item count y los precios totales por que no me funciona bien
-
-
-
-
-
-
 
 // deleteBTN.addEventListener('click', function(){
 //     let deleteBTNparent = deleteBTN.parentElement.parentElement;
 // })
-
 
 //  console.log(deleteBTN);
 //  deleteBTN.addEventListener('click', function(){
