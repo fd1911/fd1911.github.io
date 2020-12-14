@@ -1,0 +1,32 @@
+[
+    {
+    "img": "img/sweets-1.jpeg",
+    "name":"sweet item",
+    "price": 5
+    },
+    {
+    "img": "img/cupcake-1.jpeg",
+    "name":"cupcake item",
+    "price": 5
+    },
+    {
+    "img": "img/cake-1.jpeg",
+    "name":"cake item",
+    "price": 5
+    },    
+    {
+    "img": "img/doughnut-1.jpeg",
+    "name":"doughnut item",
+    "price": 10
+    },
+    {
+    "img": "img/sweets-1.jpeg",
+    "name":"sweet item",
+    "price": 5
+    },
+    {
+    "img": "img/sweets-1.jpeg",
+    "name":"sweet item",
+    "price": 5
+    }
+]

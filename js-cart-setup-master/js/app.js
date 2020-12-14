@@ -8,7 +8,55 @@
     });
 })();
 
+//add items from json
+
+let HTMLCard = "";
+let contenidoJSON = []
+
+function addItems() {
+   $.ajax({
+      url: "js/items.json",
+      dataType: "json",
+      success: function(response) {
+         console.log(status)
+         //debugger
+         contenidoJSON = response
+         $.each(response, function(i) {
+            HTMLCard +=`<div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets" data-item="sweets">
+            <div class="card ">
+              <div class="img-container">
+                <img src="${response[i].img}" class="card-img-top store-img" alt="">
+                <span class="store-item-icon">
+                  <i class="fas fa-shopping-cart"></i>
+                </span>
+              </div>
+              <div class="card-body">
+                <div class="card-text d-flex justify-content-between text-capitalize">
+                  <h5 id="store-item-name">${response[i].name}</h5>
+                  <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">${response[i].price}</strong></h5>
+  
+                </div>
+              </div>
+            </div>
+            </div>`
+         })
+         $("#store-items").html(HTMLCard)
+        },
+        error:function(){
+            HTMLCard = `<h4>Ocurrio un error</h4>`
+            $('#store-items').html(HTMLCard)
+         } 
+      })
+   }
+
+   setTimeout(()=>{
+    addItems()
+})   
 //Agregar items al carrito
+
+
+console.log("hello");
+
 
 (function () {
     const cartBtn = document.querySelectorAll('.store-item-icon');
@@ -116,3 +164,4 @@ function itemRemove() {
 //      clg(deleteBTN.parentElement)
 //  })
 // document.querySelector("#cart-item-remove > i")
+
